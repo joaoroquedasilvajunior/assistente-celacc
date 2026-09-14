@@ -1,0 +1,398 @@
+{
+  "meta": {
+    "source": "FAQ do site do Celacc (celacc.eca.usp.br)",
+    "language": "pt-BR",
+    "extracted": "2026-09-14",
+    "schema": {
+      "id": "identificador estável, usado para logs e atualizações",
+      "category": "admissao | cursos | valores_bolsas | modalidade_duracao | programa | procedimentos | contato",
+      "question": "pergunta canônica (como aparece no site)",
+      "variants": "outras formulações que estudantes usam — cada uma é embedada separadamente e aponta para a mesma resposta",
+      "answer": "resposta curada, devolvida ao modelo para reformulação",
+      "volatile": "true se contém datas/valores que expiram; revisar a cada edital",
+      "updated": "data da última revisão do conteúdo"
+    }
+  },
+  "entries": [
+    {
+      "id": "adm-01",
+      "category": "admissao",
+      "question": "O curso aceita candidatos que não possuem graduação na USP?",
+      "variants": [
+        "Preciso ter me formado na USP para fazer a pós?",
+        "Aceitam diploma de faculdade particular?",
+        "Minha graduação é de outra universidade, posso me inscrever?"
+      ],
+      "answer": "Sim. A pós-graduação do Celacc aceita diplomas de graduação de qualquer instituição de ensino superior devidamente registrada no MEC, independentemente da área de formação do candidato.",
+      "volatile": false,
+      "updated": "2026-09-14"
+    },
+    {
+      "id": "adm-02",
+      "category": "admissao",
+      "question": "Ainda sou graduando, posso participar da pós-graduação do Celacc?",
+      "variants": [
+        "Posso me inscrever antes de concluir a graduação?",
+        "Estou no último semestre da faculdade, consigo entrar na pós?",
+        "Aceitam quem ainda não colou grau?"
+      ],
+      "answer": "Não. Exige-se que o candidato comprove a titulação em algum curso de graduação (de qualquer área) para estar apto a seguir uma formação em pós-graduação.",
+      "volatile": false,
+      "updated": "2026-09-14"
+    },
+    {
+      "id": "adm-03",
+      "category": "admissao",
+      "question": "Tenho que ter formação ou conhecimento na área para participar da pós-graduação do Celacc?",
+      "variants": [
+        "Preciso de experiência prévia em cultura ou comunicação?",
+        "Sou de outra área, posso fazer a pós?",
+        "É necessário ter trabalhado com projetos culturais antes?"
+      ],
+      "answer": "A pós é aberta a todos os interessados que possuam um diploma universitário, não importando a área de formação. Não há exigência de experiência prévia na área. A formação oferece um ciclo completo de capacitação profissional de acordo com os interesses do aluno.",
+      "volatile": false,
+      "updated": "2026-09-14"
+    },
+    {
+      "id": "adm-04",
+      "category": "admissao",
+      "question": "O diploma estrangeiro é aceito sem validação ou é necessário validá-lo previamente?",
+      "variants": [
+        "Me formei fora do Brasil, meu diploma serve?",
+        "Preciso revalidar o diploma antes de me inscrever?",
+        "Diploma de universidade estrangeira é aceito?"
+      ],
+      "answer": "O diploma estrangeiro pode ser aceito no momento da inscrição. Caso o candidato seja aprovado, deverá providenciar a validação ou comprová-la durante a matrícula ou, dependendo do caso, durante a realização da pós.",
+      "volatile": false,
+      "updated": "2026-09-14"
+    },
+    {
+      "id": "adm-05",
+      "category": "admissao",
+      "question": "Existe um programa de cotas para ingresso nos cursos?",
+      "variants": [
+        "A pós do Celacc tem cotas?",
+        "Há reserva de vagas para ações afirmativas?",
+        "As cotas da USP valem para a especialização?"
+      ],
+      "answer": "Não. A pós-graduação lato sensu do Celacc depende do pagamento das mensalidades para sua gestão e possui regimento próprio, não estando vinculada ao processo de cotas da Universidade de São Paulo.",
+      "volatile": false,
+      "updated": "2026-09-14"
+    },
+    {
+      "id": "cur-01",
+      "category": "cursos",
+      "question": "Quais cursos de pós-graduação lato sensu o Celacc oferece?",
+      "variants": [
+        "Que cursos existem no Celacc?",
+        "Quais são as especializações do Celacc?",
+        "Lista de cursos de pós do Celacc"
+      ],
+      "answer": "O Celacc oferece três cursos de pós-graduação lato sensu: 1) Gestão de Projetos Culturais (GESTCULT); 2) Mídia, Informação e Cultura (MIDCULT); 3) Cultura, Educação e Relações Étnico-raciais (ETNOCULT).",
+      "volatile": false,
+      "updated": "2026-09-14"
+    },
+    {
+      "id": "cur-02",
+      "category": "cursos",
+      "question": "Existe um curso ou extensão em Jornalismo Cultural?",
+      "variants": [
+        "O Celacc tem pós em jornalismo cultural?",
+        "Onde estudo jornalismo cultural no Celacc?"
+      ],
+      "answer": "Não há um curso específico. Esse tema é tratado na grade curricular da pós em Mídia, Informação e Cultura (MIDCULT).",
+      "volatile": false,
+      "updated": "2026-09-14"
+    },
+    {
+      "id": "cur-03",
+      "category": "cursos",
+      "question": "Haverá oferta do curso de Gestão de Projetos Culturais em 2026?",
+      "variants": [
+        "Quando começa a próxima turma de GESTCULT?",
+        "Vai ter Gestão de Projetos Culturais este ano?",
+        "Nova edição do GESTCULT"
+      ],
+      "answer": "Sim, com início previsto para outubro de 2026. O edital será publicado em meados de junho de 2026.",
+      "volatile": true,
+      "updated": "2026-09-14"
+    },
+    {
+      "id": "cur-04",
+      "category": "cursos",
+      "question": "O curso de Mídia, Informação e Cultura (MIDCULT) será oferecido em 2026?",
+      "variants": [
+        "Quando começa a próxima turma de MIDCULT?",
+        "Vai ter Mídia, Informação e Cultura este ano?",
+        "Nova edição do MIDCULT"
+      ],
+      "answer": "Sim, com início previsto para outubro de 2026. O edital será publicado em meados de junho de 2026.",
+      "volatile": true,
+      "updated": "2026-09-14"
+    },
+    {
+      "id": "cur-05",
+      "category": "cursos",
+      "question": "O curso Cultura, Educação e Relações Étnico-Raciais (ETNOCULT) terá uma nova edição em 2026?",
+      "variants": [
+        "Quando começa a próxima turma de ETNOCULT?",
+        "Vai ter Cultura, Educação e Relações Étnico-raciais este ano?",
+        "Nova edição do ETNOCULT"
+      ],
+      "answer": "Sim, com início previsto para outubro de 2026.",
+      "volatile": true,
+      "updated": "2026-09-14"
+    },
+    {
+      "id": "cur-06",
+      "category": "cursos",
+      "question": "O curso de Gestão de Projetos Culturais inclui a especialização em Organização de Eventos?",
+      "variants": [
+        "GESTCULT ensina a organizar eventos?",
+        "Tem conteúdo de produção de eventos na pós de gestão cultural?",
+        "A pós forma para organização de eventos?"
+      ],
+      "answer": "Sim. O curso oferece formação que capacita o aluno em Organização de Eventos, embora esse item não apareça no título da pós em Gestão de Projetos Culturais.",
+      "volatile": false,
+      "updated": "2026-09-14"
+    },
+    {
+      "id": "cur-07",
+      "category": "cursos",
+      "question": "O curso de Mídia, Informação e Cultura ainda está vinculado ao grupo de pesquisa sobre mídia, cultura e redes comunicativas?",
+      "variants": [
+        "O MIDCULT tem grupo de pesquisa associado?",
+        "Qual grupo de pesquisa está ligado ao MIDCULT?"
+      ],
+      "answer": "Sim. O grupo de pesquisa sobre Mídia, Cultura e Redes Comunicacionais faz parte do curso MIDCULT e está cadastrado no portal Capes como uma das linhas de pesquisa do Celacc.",
+      "volatile": false,
+      "updated": "2026-09-14"
+    },
+    {
+      "id": "cur-08",
+      "category": "cursos",
+      "question": "Os cursos são oferecidos anualmente?",
+      "variants": [
+        "Com que frequência abrem novas turmas?",
+        "Tem turma todo ano?",
+        "De quanto em quanto tempo o curso é oferecido?"
+      ],
+      "answer": "Os cursos são oferecidos a cada três semestres (18 meses), ou seja, cada edição tem início após o término da anterior.",
+      "volatile": false,
+      "updated": "2026-09-14"
+    },
+    {
+      "id": "val-01",
+      "category": "valores_bolsas",
+      "question": "Qual é o valor atualizado dos cursos?",
+      "variants": [
+        "Quanto custa a pós do Celacc?",
+        "Qual o valor da mensalidade?",
+        "Preço do curso",
+        "Quantas parcelas são?"
+      ],
+      "answer": "O curso tem um investimento de R$ 9.900,00, dividido em 18 parcelas de R$ 550,00. O valor da matrícula corresponde ao valor da primeira mensalidade.",
+      "volatile": true,
+      "updated": "2026-09-14"
+    },
+    {
+      "id": "val-02",
+      "category": "valores_bolsas",
+      "question": "Há possibilidade de bolsas de estudo ou descontos?",
+      "variants": [
+        "O Celacc oferece bolsa?",
+        "Como consigo bolsa integral ou parcial?",
+        "Tem desconto para pagamento à vista?",
+        "Existe auxílio financeiro para alunos?"
+      ],
+      "answer": "Sim. A primeira mensalidade (matrícula) é obrigatória para todos. A partir do segundo mês, alunos regularmente matriculados podem participar de um edital interno para bolsas parciais ou integrais, com duração de três meses, renováveis por mais três — o que permite beneficiar outros candidatos ao longo do curso. A seleção é feita por entrevista e análise das condições econômicas do aluno. Os selecionados têm como contrapartida 6 horas semanais de estágio online auxiliando nas atividades do Celacc, dentro de suas capacidades e interesses. Desconto existe apenas para pagamento à vista do valor integral do curso.",
+      "volatile": false,
+      "updated": "2026-09-14"
+    },
+    {
+      "id": "val-03",
+      "category": "valores_bolsas",
+      "question": "Por que os cursos de pós-graduação do Celacc são pagos?",
+      "variants": [
+        "A USP não é gratuita? Por que a pós cobra mensalidade?",
+        "Por que a especialização não é de graça?"
+      ],
+      "answer": "A pós-graduação lato sensu da USP não está incluída na modalidade gratuita do estatuto da USP, como ocorre com graduação, mestrado e doutorado. As demais modalidades de pós oferecidas pelos departamentos precisam arcar com os próprios custos de manutenção, gestão e pagamento de docentes e equipe, o que inviabiliza a gratuidade.",
+      "volatile": false,
+      "updated": "2026-09-14"
+    },
+    {
+      "id": "mod-01",
+      "category": "modalidade_duracao",
+      "question": "Os cursos são presenciais, online ou híbridos?",
+      "variants": [
+        "A modalidade semipresencial significa que metade das aulas são presenciais?",
+        "O curso de Gestão de Projetos Culturais continua sendo oferecido online?",
+        "É EAD?",
+        "Preciso ir a São Paulo para as aulas?",
+        "Quantos encontros presenciais tem?",
+        "Moro em outra cidade, consigo fazer o curso?"
+      ],
+      "answer": "Os cursos não estão registrados, pelo regimento da pós, como cursos EAD. Com e após a pandemia foi adotado o formato híbrido: aulas online síncronas e um único encontro presencial bimestral (geralmente no início de cada módulo), no qual o docente apresenta o programa do módulo e há interação entre os colegas. Não é metade presencial — é apenas esse encontro por bimestre.",
+      "volatile": false,
+      "updated": "2026-09-14"
+    },
+    {
+      "id": "mod-02",
+      "category": "modalidade_duracao",
+      "question": "Como funciona a dinâmica das aulas, são síncronas ou assíncronas?",
+      "variants": [
+        "As aulas são gravadas?",
+        "Posso assistir depois?",
+        "Qual o horário das aulas?",
+        "Preciso estar online no horário da aula?"
+      ],
+      "answer": "As aulas são online e síncronas: o aluno deve estar conectado no dia e horário da aula para acompanhar ao vivo a interação com o docente. São dois períodos, das 8h30 às 12h e das 14h às 18h. As aulas não são gravadas, por isso a presença virtual é obrigatória. Além disso há um encontro presencial bimestral, geralmente no início de cada módulo.",
+      "volatile": false,
+      "updated": "2026-09-14"
+    },
+    {
+      "id": "mod-03",
+      "category": "modalidade_duracao",
+      "question": "Qual a duração dos cursos de especialização?",
+      "variants": [
+        "Quanto tempo dura a pós?",
+        "O curso dura quantos meses?",
+        "Tem férias durante o curso?"
+      ],
+      "answer": "Os cursos duram três semestres, ou seja, dezoito meses corridos, incluindo os períodos de férias regulares do calendário da Universidade.",
+      "volatile": false,
+      "updated": "2026-09-14"
+    },
+    {
+      "id": "prg-01",
+      "category": "programa",
+      "question": "As disciplinas dos cursos mudam a cada edição?",
+      "variants": [
+        "A grade curricular é sempre a mesma?",
+        "O conteúdo é atualizado?"
+      ],
+      "answer": "Sim. A cada edição há uma revisão programática de acordo com a evolução do campo de pesquisa de cada área, para manter o curso alinhado às exigências profissionais e demandas de mercado.",
+      "volatile": false,
+      "updated": "2026-09-14"
+    },
+    {
+      "id": "prg-02",
+      "category": "programa",
+      "question": "É possível validar disciplinas cursadas em outra pós-graduação?",
+      "variants": [
+        "Aproveitam disciplinas de outra especialização?",
+        "Posso pedir dispensa de matérias que já fiz?"
+      ],
+      "answer": "Sim, desde que se comprove que a carga horária e o conteúdo da disciplina já realizada estejam de acordo com o conteúdo programático adotado pela pós do Celacc.",
+      "volatile": false,
+      "updated": "2026-09-14"
+    },
+    {
+      "id": "prg-03",
+      "category": "programa",
+      "question": "Onde posso acessar o programa e a grade curricular dos cursos?",
+      "variants": [
+        "Onde vejo as disciplinas do curso?",
+        "Link para a grade curricular",
+        "Quais matérias tem no curso?"
+      ],
+      "answer": "Os programas e grades curriculares estão disponíveis na página do Celacc (https://celacc.eca.usp.br/pt-br/institucional), no menu \"Pós-graduação\", nos respectivos links de cada curso.",
+      "volatile": false,
+      "updated": "2026-09-14"
+    },
+    {
+      "id": "prg-04",
+      "category": "programa",
+      "question": "Existe trabalho de conclusão de curso? Se sim, este é individual ou em grupo?",
+      "variants": [
+        "Tem TCC?",
+        "Como é a avaliação final?",
+        "Precisa escrever monografia?",
+        "O trabalho final é em grupo?",
+        "Como são as avaliações dos módulos?"
+      ],
+      "answer": "Cada módulo tem sua própria avaliação, individual ou em grupo, conforme orientação do professor responsável. Durante o curso, um trabalho programado prático é desenvolvido em grupo sob orientação dos professores e apresentado perante uma banca. Ao final, cada aluno entrega uma monografia individual no formato de artigo científico, defendida em banca e orientada por um professor de acordo com seu tema de pesquisa. A ideia é que o aluno amadureça um tema ao longo de todo o curso, e o último módulo é dedicado à escrita desse trabalho final.",
+      "volatile": false,
+      "updated": "2026-09-14"
+    },
+    {
+      "id": "prc-01",
+      "category": "procedimentos",
+      "question": "Quando abrem as inscrições para os cursos de pós-graduação do Celacc?",
+      "variants": [
+        "Quando sai o edital?",
+        "Data das inscrições",
+        "Já abriram as inscrições?"
+      ],
+      "answer": "Os editais estão previstos para publicação em junho de 2026, com inscrições programadas para o segundo semestre de 2026. Acompanhe o site do Celacc para mais precisões.",
+      "volatile": true,
+      "updated": "2026-09-14"
+    },
+    {
+      "id": "prc-02",
+      "category": "procedimentos",
+      "question": "Onde encontro o edital atualizado para o processo seletivo?",
+      "variants": [
+        "Link do edital",
+        "Onde baixo o edital?"
+      ],
+      "answer": "O edital fica disponível no site do Celacc: https://celacc.eca.usp.br/pt-br",
+      "volatile": false,
+      "updated": "2026-09-14"
+    },
+    {
+      "id": "prc-03",
+      "category": "procedimentos",
+      "question": "O edital de 2025 será mantido para 2026 ou haverá atualização?",
+      "variants": [
+        "Posso usar o edital antigo para me preparar?",
+        "A bibliografia da prova muda?"
+      ],
+      "answer": "As informações dos editais são atualizadas a cada edição dos cursos, com revisão da bibliografia indicada para o exame.",
+      "volatile": true,
+      "updated": "2026-09-14"
+    },
+    {
+      "id": "prc-04",
+      "category": "procedimentos",
+      "question": "Como serão realizadas as inscrições, devo comparecer presencialmente?",
+      "variants": [
+        "A inscrição é online?",
+        "Como funciona o processo seletivo?",
+        "Tem prova? Como me preparo?",
+        "Preciso ir até a USP para me inscrever?"
+      ],
+      "answer": "As inscrições são feitas pelo portal do Celacc após a divulgação do edital. Todo o processo — inscrição, envio de documentação, avaliação e seleção — é online, em plataforma própria. O edital traz uma bibliografia a partir da qual os candidatos podem se preparar para a prova.",
+      "volatile": false,
+      "updated": "2026-09-14"
+    },
+    {
+      "id": "prc-05",
+      "category": "procedimentos",
+      "question": "Como funciona a matrícula após aprovação no processo seletivo?",
+      "variants": [
+        "Fui aprovado, e agora?",
+        "Quais documentos preciso enviar na matrícula?",
+        "A matrícula é presencial?",
+        "Quando pago a matrícula?"
+      ],
+      "answer": "Após a aprovação, o candidato faz a matrícula pela plataforma do Celacc, enviando cópia digital da documentação solicitada, e posteriormente envia pelo correio a documentação comprobatória da graduação (diploma e grade curricular). O valor da matrícula (equivalente à primeira mensalidade) é pago no momento da matrícula. Todo o procedimento é online.",
+      "volatile": false,
+      "updated": "2026-09-14"
+    },
+    {
+      "id": "con-01",
+      "category": "contato",
+      "question": "Como posso entrar em contato para mais informações?",
+      "variants": [
+        "Qual o e-mail do Celacc?",
+        "Como falo com a secretaria?",
+        "Redes sociais do Celacc"
+      ],
+      "answer": "Entre em contato diretamente com a equipe do Celacc pelo e-mail celacc@usp.br, ou pelas mídias sociais: Facebook, Instagram, X e LinkedIn.",
+      "volatile": false,
+      "updated": "2026-09-14"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "functions": { "api/ask.js": { "includeFiles": "data/**" } },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Content-Security-Policy", "value": "frame-ancestors 'self' https://*.usp.br https://*.moodle.com" }
+      ]
+    }
+  ]
+}

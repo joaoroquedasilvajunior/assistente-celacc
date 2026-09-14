@@ -1,0 +1,7 @@
+{
+  "name": "assistente-celacc",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=18" },
+  "scripts": { "dev": "vercel dev" }
+}

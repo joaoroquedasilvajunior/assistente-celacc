@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Assistente Celacc</title>
+<style>
+  :root{
+    --ink:#1F2A5A; --ink-soft:#3A4573; --slate:#E9ECF3; --line:#D6DAE6;
+    --paper:#FFFFFF; --text:#1B1F2E; --muted:#6C7285; --olive:#5F6E2E; --warn:#8A4B1E;
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:var(--paper);color:var(--text);
+    font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .app{max-width:560px;height:100vh;max-height:100vh;margin:0 auto;display:flex;flex-direction:column;border-left:1px solid var(--line);border-right:1px solid var(--line)}
+  header{padding:14px 18px;border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:10px}
+  header h1{font-size:16px;font-weight:600;margin:0;color:var(--ink)}
+  header span{font-size:13px;color:var(--muted)}
+  .log{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:14px;scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){.log{scroll-behavior:auto}}
+  .msg{max-width:88%;padding:11px 14px;border-radius:var(--radius);white-space:pre-wrap;overflow-wrap:anywhere}
+  .msg.user{align-self:flex-end;background:var(--slate);border-bottom-right-radius:4px}
+  .msg.bot{align-self:flex-start;background:var(--ink);color:#fff;border-bottom-left-radius:4px}
+  .msg.bot a{color:#DDE3FF}
+  .msg.nomatch{background:#FFF7EE;color:var(--text);border:1px solid #EAD6C2}
+  .src{align-self:flex-start;font-size:12px;color:var(--muted);margin-top:-8px;padding-left:4px}
+  .src b{font-weight:500;color:var(--olive)}
+  .empty{margin:auto 0;color:var(--muted)}
+  .empty p{margin:0 0 12px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chips button{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:7px 12px;font:inherit;font-size:14px;cursor:pointer;text-align:left}
+  .chips button:hover,.chips button:focus-visible{border-color:var(--ink);outline:none}
+  .thinking{align-self:flex-start;color:var(--muted);font-size:14px}
+  .bar{display:flex;gap:8px;padding:12px 18px 16px;border-top:1px solid var(--line)}
+  input{flex:1;font:inherit;padding:11px 14px;border:1px solid var(--line);border-radius:10px;background:#fff}
+  input:focus{outline:2px solid var(--ink);outline-offset:-1px;border-color:var(--ink)}
+  button.send{font:inherit;font-weight:600;padding:0 18px;border:0;border-radius:10px;background:var(--ink);color:#fff;cursor:pointer}
+  button.send:disabled{opacity:.5;cursor:default}
+  footer{font-size:12px;color:var(--muted);text-align:center;padding:0 18px 12px}
+</style>
+</head>
+<body>
+<div class="app">
+  <header><h1>Assistente Celacc</h1><span>responde só com base na FAQ</span></header>
+  <div class="log" id="log">
+    <div class="empty" id="empty">
+      <p>Pergunte sobre inscrições, valores, bolsas, modalidade das aulas ou trabalho final.</p>
+      <div class="chips">
+        <button type="button">Quanto custa o curso?</button>
+        <button type="button">As aulas são gravadas?</button>
+        <button type="button">Moro em outra cidade, consigo fazer?</button>
+        <button type="button">Tem TCC?</button>
+      </div>
+    </div>
+  </div>
+  <div class="bar">
+    <input id="q" autocomplete="off" placeholder="Escreva sua pergunta…" aria-label="Sua pergunta">
+    <button class="send" id="send" type="button">Enviar</button>
+  </div>
+  <footer>Fonte: FAQ do site do Celacc</footer>
+</div>
+
+<script>
+const log = document.getElementById('log');
+const input = document.getElementById('q');
+const send = document.getElementById('send');
+const empty = document.getElementById('empty');
+const history = [];
+
+function add(cls, text){
+  const d = document.createElement('div');
+  d.className = 'msg ' + cls;
+  d.textContent = text;
+  log.appendChild(d);
+  log.scrollTop = log.scrollHeight;
+  return d;
+}
+function addSource(ids){
+  if(!ids || !ids.length) return;
+  const s = document.createElement('div');
+  s.className = 'src';
+  s.innerHTML = 'Fonte: FAQ <b></b>';
+  s.querySelector('b').textContent = ids.join(', ');
+  log.appendChild(s);
+}
+
+async function ask(text){
+  if(!text.trim()) return;
+  if(empty) empty.remove();
+  add('user', text);
+  history.push({role:'user', content:text});
+  input.value=''; send.disabled=true;
+  const t = add('thinking','Consultando a FAQ…');
+  try{
+    const r = await fetch('/api/ask',{
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({messages:history})
+    });
+    const out = await r.json();
+    t.remove();
+    if(!r.ok) throw new Error(out.error || r.status);
+    if(out.found){
+      add('bot', out.answer);
+      addSource(out.matched_ids);
+    } else {
+      add('bot nomatch', out.answer || 'Essa informação não está na FAQ. Escreva para celacc@usp.br.');
+    }
+    history.push({role:'assistant', content:out.raw || JSON.stringify(out)});
+  }catch(err){
+    t.remove();
+    add('bot nomatch','Não foi possível consultar o assistente agora. Tente novamente ou escreva para celacc@usp.br.');
+    console.error(err);
+  }finally{ send.disabled=false; input.focus(); }
+}
+
+send.addEventListener('click', ()=>ask(input.value));
+input.addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); ask(input.value); } });
+document.querySelectorAll('.chips button').forEach(b=>b.addEventListener('click',()=>ask(b.textContent)));
+</script>
+</body>
+</html>
