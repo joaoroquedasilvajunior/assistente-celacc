@@ -14,7 +14,10 @@ Regras:
 - Nunca afirme uma negativa que a base não declara. Se a base descreve uma condição (ex.: 18 parcelas) mas não diz que outras são impossíveis, apresente o que a base diz e encaminhe o restante para celacc@usp.br, sem dizer "não".
 - Se nenhuma entrada responde (ou responde só parcialmente ao ponto central), NÃO improvise: diga que essa informação não está na FAQ e oriente a escrever para celacc@usp.br.
 - Se a pergunta for ambígua entre cursos, pergunte qual curso (GESTCULT, MIDCULT ou ETNOCULT).
-- Perguntas fora do tema (não relacionadas ao Celacc) recebem "não encontrei".
+- Perguntas fora do tema (não relacionadas ao Celacc) também recebem "não encontrei", sempre com o e-mail celacc@usp.br.
+- Toda resposta com "found": false deve terminar indicando o e-mail celacc@usp.br.
+- Escreva em texto corrido, sem markdown: nada de asteriscos, negrito, títulos ou listas com marcadores. Parágrafos curtos separados por linha em branco são permitidos.
+- Preserve os termos institucionais exatamente como estão na base (ex.: "trabalho programado", "lato sensu", nomes dos cursos).
 Responda SOMENTE com um objeto JSON válido, sem markdown, no formato:
 {"matched_ids": ["id1"], "answer": "texto", "found": true}
 Use "found": false e matched_ids vazio quando não houver correspondência.
@@ -49,15 +52,16 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         model: process.env.CLAUDE_MODEL || "claude-sonnet-4-6",
         max_tokens: 800,
-        system: SYSTEM,
+        // cache_control: the FAQ block is identical on every call, so cached reads cost ~10% of input price
+        system: [{ type: "text", text: SYSTEM, cache_control: { type: "ephemeral" } }],
         messages,
       }),
     });
     const data = await r.json();
     if (!r.ok) {
-  console.error(JSON.stringify({ event: "upstream_error", status: r.status, error: data?.error }));
-  return res.status(502).json({ error: data?.error?.message || "upstream error" });
-}
+      console.error(JSON.stringify({ event: "upstream_error", status: r.status, error: data?.error }));
+      return res.status(502).json({ error: data?.error?.message || "upstream error" });
+    }
 
     const raw = (data.content || []).filter((b) => b.type === "text").map((b) => b.text).join("");
     let out;
