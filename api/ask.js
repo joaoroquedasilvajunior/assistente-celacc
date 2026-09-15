@@ -54,7 +54,10 @@ export default async function handler(req, res) {
       }),
     });
     const data = await r.json();
-    if (!r.ok) return res.status(502).json({ error: data?.error?.message || "upstream error" });
+    if (!r.ok) {
+  console.error(JSON.stringify({ event: "upstream_error", status: r.status, error: data?.error }));
+  return res.status(502).json({ error: data?.error?.message || "upstream error" });
+}
 
     const raw = (data.content || []).filter((b) => b.type === "text").map((b) => b.text).join("");
     let out;
